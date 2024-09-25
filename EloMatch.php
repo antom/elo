@@ -4,7 +4,7 @@ namespace Zelenin\Elo;
 
 use Closure;
 
-class Match
+class EloMatch
 {
     /** @var Player */
     private $player1;
@@ -33,7 +33,7 @@ class Match
      * @param Player $player1
      * @param Player $player2
      */
-    public function __construct(Player $player1, Player $player2)
+    public function __construct(EloPlayer $player1, EloPlayer $player2)
     {
         $this->player1 = $player1;
         $this->player2 = $player2;

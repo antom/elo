@@ -2,7 +2,7 @@
 
 namespace Zelenin\Elo;
 
-class Player
+class EloPlayer
 {
     /** @var float */
     private $rating;

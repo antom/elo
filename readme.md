@@ -29,8 +29,8 @@ Create two players with current ratings:
 ```php
 use Zelenin\Elo\Player;
 
-$player1 = new Player(1200);
-$player2 = new Player(800);
+$player1 = new EloPlayer(1200);
+$player2 = new EloPlayer(800);
 ```
 
 Create match:
@@ -38,7 +38,7 @@ Create match:
 ```php
 use Zelenin\Elo\Match;
 
-$match = new Match($player1, $player2);
+$match = new EloMatch($player1, $player2);
 $match->setScore(1, 0)
     ->setK(32)
     ->count();
@@ -66,8 +66,8 @@ If you want use this library for not-traditional for Elo sports like football, i
 use Zelenin\Elo\Match;
 use Zelenin\Elo\Player;
 
-$player1 = new Player(1200);
-$player2 = new Player(800);
+$player1 = new EloPlayer(1200);
+$player2 = new EloPlayer(800);
 
 $goalIndexHandler = function ($score1, $score2) {
     $diff = abs($score1 - $score2);
@@ -88,7 +88,7 @@ $homeCorrectionHandler = function ($home, $diff) {
     return $diff;
 };
 
-$match = new Match($player1, $player2);
+$match = new EloMatch($player1, $player2);
 $match->setScore(1, 0)
     ->setK(32)
     ->setGoalIndexHandler($goalIndexHandler)
